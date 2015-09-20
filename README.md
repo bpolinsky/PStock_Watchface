@@ -9,4 +9,5 @@ In the intended use case of tracking stock prices, a value of 10 would mean that
 Whereas a value of 3 would mean that the stock has dropped in price, but it may not have been an extremely large drop. A value of 3 would display:<br/>
 ![Emoji3](https://raw.githubusercontent.com/bpolinsky/PStock_Watchface/master/stockemoji/3.png)<br/>
 </br>
-There is also a server-side display that can be seen at: <http://spring.rutgers.edu:8080/pstockwatchface/> that shows not only the entire range of monochrome-emojis but also shows the current color-emojis of data currently available for representation in the Pebble watchface.
+There is also a server-side display that can be seen at: <http://spring.rutgers.edu:8080/pstockwatchface/><br/>
+This display shows not only the entire range of monochrome-emojis but also shows the current color-emojis of data currently available for representation in the Pebble watchface.
