@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 
-<project name="springapp" basedir="." default="usage">
+<project name="pstockwatchface" basedir="." default="usage">
     <property file="build.properties"/>
 
     <property name="src.dir" value="src"/>
     <property name="web.dir" value="war"/>
     <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
-    <property name="name" value="springapp"/>
+    <property name="name" value="pstockwatchface"/>
 
     <path id="master-classpath">
         <fileset dir="${web.dir}/WEB-INF/lib">
