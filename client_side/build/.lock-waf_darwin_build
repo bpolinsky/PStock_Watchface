@@ -1,0 +1,8 @@
+argv = ['/usr/local/Cellar/pebble-sdk/3.2.1/Pebble/waf', 'configure']
+environ = {'TERM_SESSION_ID': 'BAA8F0DC-4EEB-4E7B-9A53-B3C317C1942C', 'SSH_AUTH_SOCK': '/tmp/launch-ZjudQe/Listeners', 'PYTHONPATH': '/usr/local/Cellar/pebble-sdk/3.2.1/libexec/lib/python2.7/site-packages:/usr/local/Cellar/pebble-sdk/3.2.1/lib/python2.7/site-packages', 'VERSIONER_PYTHON_PREFER_32_BIT': 'no', 'TERM_PROGRAM_VERSION': '326', 'SHELL': '/bin/bash', 'LOGNAME': 'ConstantinaScoullis', 'USER': 'ConstantinaScoullis', 'NO_GCE_CHECK': 'False', 'HOME': '/Users/ConstantinaScoullis', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/Cellar/pebble-sdk/3.2.1/arm-cs-tools/bin', 'DISPLAY': '/tmp/launch-qlKZwV/org.macosforge.xquartz:0', 'TMPDIR': '/var/folders/7j/g5gths_5045b6pjg430kn8300000gn/T/', 'TERM_PROGRAM': 'Apple_Terminal', 'LANG': 'en_US.UTF-8', 'TERM': 'xterm-256color', 'Apple_PubSub_Socket_Render': '/tmp/launch-xedXhu/Render', 'VERSIONER_PYTHON_VERSION': '2.7', 'SHLVL': '1', '__CF_USER_TEXT_ENCODING': '0x1F5:0:0', 'PWD': '/Users/ConstantinaScoullis/desktop/pstock_watchface', '_': '/usr/local/bin/pebble', '__CHECKFIX1436934': '1'}
+files = ['/Users/ConstantinaScoullis/Desktop/pstock_watchface/wscript']
+hash = 2423177563626642261
+options = {'files': '', 'jobs': 4, 'verbose': 0, 'nocache': False, 'progress_bar': 0, 'timestamp': None, 'distcheck_args': None, 'top': '', 'destdir': '', 'keep': 0, 'zones': '', 'debug': False, 'prefix': '/usr/local/', 'download': False, 'force': False, 'targets': '', 'out': ''}
+out_dir = '/Users/ConstantinaScoullis/Desktop/pstock_watchface/build'
+run_dir = '/Users/ConstantinaScoullis/Desktop/pstock_watchface'
+top_dir = '/Users/ConstantinaScoullis/Desktop/pstock_watchface'
