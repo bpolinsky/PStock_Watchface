@@ -20,6 +20,10 @@ img {
     width: 5%;
 }
 
+.middleResults {
+    text-align: center;
+}
+
 .footer {
     text-align: center;
     position: absolute;

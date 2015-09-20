@@ -109,7 +109,8 @@ date = "%04d-%02d-%02d"%(date.year,date.month,date.day)
 #date = '2014-10-01'
 stocks = list()
 stocks.append(getTickerDict('NASAAC','LMEXNA Index',date))
-stocks.append(getTickerDict('Aluminium','LMEXAH Index',date))
+al = getTickerDict('Aluminium','LMEXAH Index',date)
+stocks.append(al)
 stocks.append(getTickerDict('Aluminium Alloy','LMEXAA Index',date))
 stocks.append(getTickerDict('Steel','LMEXFM Index',date))
 stocks.append(getTickerDict('Lead','LMEXPB Index',date))
@@ -119,7 +120,8 @@ stocks.append(getTickerDict('Tin','LMEXSN Index',date))
 stocks.append(getTickerDict('Nickel','LMEXNI Index',date))
 
 #print date
-print "{ \"Data\" : %s }"%json.dumps(stocks)
+print al
+
 
 # data = table.query(KeyConditionExpression = 
 #                    Key('Ticker').eq('LMEXNA Index') & )

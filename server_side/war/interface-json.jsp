@@ -4,7 +4,7 @@
 
 <%
 
-Process p = new ProcessBuilder("/cac/u01/mg900/bin/PStock_Watchface/server_side/src/python/query.py", "myarg").start();
+Process p = new ProcessBuilder("/cac/u01/mg900/bin/PStock_Watchface/server_side/src/python/query2.py", "myarg").start();
 
 p.waitFor();
    
