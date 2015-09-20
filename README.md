@@ -4,7 +4,7 @@
 PStock_Watchface is a Pebble watchface that displays data change (e.g. daily stock price change) as an emoji. When prompted through an HttpRequest, the server-side code, using a set of current and historical data to determine how drastic a change is, will return a value in the range of 0-10 for each data category being tracked based on how much the value has changed since the last value was recorded and whether then change was in the positive or negative direction. The Pebble watchface then displays an emoji icon that corresponds to this returned value, showing other icons when there is either no data available or there was an error accessing the data.<br/>
 <br/>
 In the intended use case of tracking stock prices, a value of 10 would mean that the stock price has gone up a very large amount (as determined by previously gathered data) and will result in the following watchface:</br>
-<https://raw.githubusercontent.com/bpolinsky/PStock_Watchface/master/screenshots/10_value.jpg>
+![Emoji10](/path/to/https://raw.githubusercontent.com/bpolinsky/PStock_Watchface/master/screenshots/10_value.jpg)
 <br/>
 Whereas a value of 3 would mean that the stock has dropped in price, but it may not have been an extremely large drop. A value of 3 would display:<br/>
 <https://raw.githubusercontent.com/bpolinsky/PStock_Watchface/master/stockemoji/3.png><br/>
