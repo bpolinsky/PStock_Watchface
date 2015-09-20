@@ -77,6 +77,13 @@ def getTicker(ticker,date):
     
     return return_value+5
 
+def getTickerDict(name,ticker,date):
+    d = dict()
+    d['identifier'] = name
+    d['value'] = getTicker(ticker,date)
+    return d
+
+
 def getNextDate():
     datefile = "/tmp/datefile"
     date = datetime.datetime(2014,3,1,0,0,0)
@@ -100,20 +107,19 @@ date = getNextDate()
 date = "%04d-%02d-%02d"%(date.year,date.month,date.day)
 
 #date = '2014-10-01'
-stocks = dict()
-stocks['NASAAC'] = getTicker('LMEXNA Index',date)
-stocks['Aluminium'] = getTicker('LMEXAH Index',date)
-stocks['Aluminium Alloy'] = getTicker('LMEXAA Index',date)
-stocks['Steel'] = getTicker('LMEXFM Index',date)
-stocks['Lead'] = getTicker('LMEXPB Index',date)
-stocks['Zinc'] = getTicker('LMEXZS Index',date)
-stocks['Copper'] = getTicker('LMEXCA Index',date)
-stocks['Tin'] = getTicker('LMEXSN Index',date)
-stocks['Nickel'] = getTicker('LMEXNI Index',date)
+stocks = list()
+stocks.append(getTickerDict('NASAAC','LMEXNA Index',date))
+stocks.append(getTickerDict('Aluminium','LMEXAH Index',date))
+stocks.append(getTickerDict('Aluminium Alloy','LMEXAA Index',date))
+stocks.append(getTickerDict('Steel','LMEXFM Index',date))
+stocks.append(getTickerDict('Lead','LMEXPB Index',date))
+stocks.append(getTickerDict('Zinc','LMEXZS Index',date))
+stocks.append(getTickerDict('Copper','LMEXCA Index',date))
+stocks.append(getTickerDict('Tin','LMEXSN Index',date))
+stocks.append(getTickerDict('Nickel','LMEXNI Index',date))
 
 #print date
 print json.dumps(stocks)
-
 
 # data = table.query(KeyConditionExpression = 
 #                    Key('Ticker').eq('LMEXNA Index') & )
