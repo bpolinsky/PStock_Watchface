@@ -5,10 +5,11 @@
 <%@ page import="java.util.Iterator" %>
 
 <%
-Process p = new ProcessBuilder("/cac/u01/mg900/bin/PStock_Watchface/server_side/src/python/query.py", "myarg").start();
+Process p = new ProcessBuilder("/cac/u01/mg900/bin/PStock_Watchface/server_side/src/python/query_plain.py", "myarg").start();
 p.waitFor();
 String inputStreamString = new Scanner(p.getInputStream(),"UTF-8").useDelimiter("\\A").next();
-out.println(inputStreamString);
+
+//out.println(inputStreamString);
 /*
    String t = "{'phonetype':'95','cat':'WP'}";
 
@@ -26,9 +27,7 @@ out.println(inputStreamString);
    System.out.println("map : "+map);
 
 */
-
 %>
-
 <!DOCTYPE HTML>
 <HTML>
   <head>
@@ -39,9 +38,40 @@ out.println(inputStreamString);
     <h1>The Faces of PStock</h1>
 
     <div class="middleResults">
+      <table class="resultsTable">
+	<tr>
 <%
+String lines[] = inputStreamString.split("\\r?\\n");
+
+int numLines = Integer.parseInt(lines[0]);
+if(numLines > 9) numLines = 9;
+
+for(int i = 0 ; i<numLines ; i++) {
+  if(i == 3 || i == 6) {
 %>
-      <img src="https://raw.githubusercontent.com/bpolinsky/PStock_Watchface/master/stockemoji/stockemoji-color/<% out.println(); %>c.png" style="width:12%"/>
+	</tr>
+	<tr>
+<%
+  }
+  String id = lines[(i*3)+1];
+  String value = lines[(i*3)+2];
+  String actual_v = lines[(i*3)+3];
+%>
+<td>
+
+
+<div class="imgHolder">
+      <img src="https://raw.githubusercontent.com/bpolinsky/PStock_Watchface/master/stockemoji/stockemoji-color/<% int ivalue = Integer.parseInt(value); if( ivalue>10 || ivalue<0) out.println("closed"); else out.print(value); %>c.png" style="width:35%"/>
+    <span class="spanLeft"><% out.print(id); %></span>
+    <span class="spanRight"><% out.print(actual_v); %></span>
+</div>
+</td>
+
+<%  
+}
+%>
+	</tr>
+      </table>
     </div>
 
     <div class="footer">

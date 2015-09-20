@@ -44,7 +44,7 @@ def getTicker(ticker,date):
     if len(data['Items']) > 0:
         return_value = int(data['Items'][0]['Value'])
     else:
-        return_value = -1
+        return -1
     previousDate = datetime.datetime.strptime(date,'%Y-%m-%d') - datetime.timedelta(days=75)
     previousDate = "%04d-%02d-%02d"%(previousDate.year,previousDate.month,previousDate.day)
 

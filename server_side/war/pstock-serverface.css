@@ -24,10 +24,37 @@ img {
     text-align: center;
 }
 
+.resultsTable {
+    margin: 10px auto;
+    width: 75%
+}
+
 .footer {
     text-align: center;
     position: absolute;
     width: 100%;
     bottom: 0px;	
     margin:auto;
+}
+
+.imgHolder {
+    position: relative;
+}
+
+.imgHolder .spanLeft {
+    font-family: 'Wire One', sans-serif;
+    font-size:38px;
+    position: absolute;
+    float: left;
+    padding-left: 20px;
+    top: 20px;
+}
+
+.imgHolder .spanRight {
+    font-family: 'Wire One', sans-serif;
+    font-size:20px;
+    position: absolute;
+    float: left;
+    padding-left: 20px;
+    bottom: 10px;
 }
