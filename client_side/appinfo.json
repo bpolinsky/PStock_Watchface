@@ -22,67 +22,67 @@
     {
       "type": "png",
       "name": "SLEEP",
-      "file": "/image/closed.png"
+      "file": "image/closed.png"
     },
     {
       "type": "png",
       "name": "ZERO",
-      "file": "/image/0.png"
+      "file": "image/0.png"
     },
     {
       "type": "png",
       "name": "ONE",
-      "file": "/image/1.png"
+      "file": "image/1.png"
     },
     {
       "type": "png",
       "name": "TWO",
-      "file": "/image/2.png"
+      "file": "image/2.png"
     },
     {
       "type": "png",
       "name": "THREE",
-      "file": "/image/3.png"
+      "file": "image/3.png"
     },
     {
       "type": "png",
       "name": "FOUR",
-      "file": "/image/4.png"
+      "file": "image/4.png"
     },
     {
       "type": "png",
       "name": "FIVE",
-      "file": "/image/5.png"
+      "file": "image/5.png"
     },
     {
       "type": "png",
       "name": "SIX",
-      "file": "/image/6.png"
+      "file": "image/6.png"
     },
     {
       "type": "png",
       "name": "SEVEN",
-      "file": "/image/7.png"
+      "file": "image/7.png"
     },
     {
       "type": "png",
       "name": "EIGHT",
-      "file": "/image/8.png"
+      "file": "image/8.png"
     },
     {
       "type": "png",
       "name": "NINE",
-      "file": "/image/9.png"
+      "file": "image/9.png"
     },
     {
       "type": "png",
       "name": "TEN",
-      "file": "/image/10.png"
+      "file": "image/10.png"
     },
     {
       "type": "png",
       "name": "ERROR",
-      "file": "/image/error.png"
+      "file": "image/error.png"
     }
     
     ]

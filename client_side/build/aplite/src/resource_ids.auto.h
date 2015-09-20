@@ -6,8 +6,6 @@
 // DO NOT MODIFY
 //
 
-#include <stdint.h>
-#include "pebble.h"
 typedef enum {
   INVALID_RESOURCE = 0,
   RESOURCE_ID_INVALID = 0,

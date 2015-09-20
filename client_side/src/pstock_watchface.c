@@ -10,6 +10,7 @@ static TextLayer *watchface_status_layer;
 static BitmapLayer *emoji_layer; 
 static GBitmap *emoji_bitmap;
 
+static int pending_request = 0;
 
 static void closingBell(struct tm *current_time){
  time_t temp = time(NULL);
@@ -94,20 +95,25 @@ static void main_window_unload(Window *window) {
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
-  update_time();
+	update_time();
   
-  closingBell(tick_time);
+	closingBell(tick_time);
+
+
+	// static char identifier_buffer[32];
+	// snprintf(identifier_buffer, sizeof(identifier_buffer), "%d", tick_time->tm_sec);
+	// text_layer_set_text(watchface_status_layer,identifier_buffer);
 
   
-  if(tick_time->tm_sec % 4  == 0) {
-
-  DictionaryIterator *iter;
-  app_message_outbox_begin(&iter);
-
-  dict_write_uint8(iter, 0, 1);
-
-  app_message_outbox_send();
-}
+	if(tick_time->tm_sec % 10  == 0) {
+		if(pending_request == 0) {
+			pending_request = 1;
+			DictionaryIterator *iter;
+			app_message_outbox_begin(&iter);
+			dict_write_uint8(iter, 0, 1);
+			app_message_outbox_send();
+		}
+	}
 
 
 }
@@ -119,6 +125,8 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
   static char watchface_status_layer_buffer[32];
   
   Tuple *t = dict_read_first(iterator);
+
+  pending_request = 0;
 
   while(t != NULL) {
 
@@ -243,7 +251,7 @@ static void inbox_dropped_callback(AppMessageResult reason, void *context) {
   bitmap_layer_set_bitmap(emoji_layer, emoji_bitmap);
   layer_add_child(window_get_root_layer(watchface_window), bitmap_layer_get_layer(emoji_layer));
   
-  text_layer_set_text(watchface_status_layer, "ERROR");
+  text_layer_set_text(watchface_status_layer, "ERROR 1");
   layer_add_child(window_get_root_layer(watchface_window), text_layer_get_layer(watchface_status_layer));
 
   
@@ -257,7 +265,7 @@ static void outbox_failed_callback(DictionaryIterator *iterator, AppMessageResul
   bitmap_layer_set_bitmap(emoji_layer, emoji_bitmap);
   layer_add_child(window_get_root_layer(watchface_window), bitmap_layer_get_layer(emoji_layer));
   
-  text_layer_set_text(watchface_status_layer, "ERROR");
+  text_layer_set_text(watchface_status_layer, "ERROR 2");
   layer_add_child(window_get_root_layer(watchface_window), text_layer_get_layer(watchface_status_layer));
 }
 
@@ -275,7 +283,7 @@ static void init() {
 
   window_stack_push(watchface_window, true);
   
-  tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  tick_timer_service_subscribe(SECOND_UNIT, tick_handler);
   
   app_message_register_inbox_received(inbox_received_callback);
   app_message_register_inbox_dropped(inbox_dropped_callback);
