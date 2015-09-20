@@ -4,13 +4,13 @@
 
 <%
 
-Process p = new ProcessBuilder("/cac/u01/mg900/bin/pstockwatchface/query.py", "myarg").start();
+Process p = new ProcessBuilder("/cac/u01/mg900/bin/PStock_Watchface/server_side/src/python/query.py", "myarg").start();
 
 p.waitFor();
    
 String inputStreamString = new Scanner(p.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
-//out.println(inputStreamString);
+out.println(inputStreamString);
 
-out.println("{ \"Steel\":9 }");
+//out.println("{ \"Steel\":9 }");
 %>
